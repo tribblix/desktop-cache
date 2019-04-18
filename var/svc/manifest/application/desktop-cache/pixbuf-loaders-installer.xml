@@ -103,7 +103,7 @@
 		<documentation>
 			<manpage
 				title='gdk-pixbuf-query-loaders'
-				section='1M'
+				section='1'
 				manpath='/usr/share/man' />
 		</documentation>
 	</template>

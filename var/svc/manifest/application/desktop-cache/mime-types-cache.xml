@@ -102,7 +102,7 @@
 		<documentation>
 			<manpage
 				title='update-mime-database'
-				section='1M'
+				section='1'
 				manpath='/usr/share/man' />
 		</documentation>
 	</template>
