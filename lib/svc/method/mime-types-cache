@@ -35,7 +35,6 @@ PATH=/usr/bin:/usr/sbin
 . /lib/svc/share/smf_include.sh
 
 USAGE="Usage: $0 { start | refresh }"
-FIND_NEWER=/usr/share/desktop-cache/find_newer
 
 if [ $# -ne 1 ] ; then
     echo $USAGE
@@ -43,20 +42,22 @@ if [ $# -ne 1 ] ; then
 fi
 
 #
-# IF the mime cache exist then :
+# IF the mime cache exists then :
 #   get the list of mime type files newer than the cache file
 # ELSE
 #   make list greater than zero to generate a cache
 #
 # generate the cache
 #
+# note that the find includes the directory, we do want to regenerate the
+# cache if the contents have changed
+#
 
 start_mime_types_cache ()
 {
 if [ -a "/usr/share/mime/mime.cache" ]; then
-  RESULT=`${FIND_NEWER} -f -c -m \
-      --newer /usr/share/mime/mime.cache \
-      /usr/share/mime/packages 2>/dev/null`
+  RESULT=`/usr/bin/find /usr/share/mime/packages \
+      -newer /usr/share/mime/mime.cache 2>/dev/null`
 else
   RESULT="no cache found"
 fi
