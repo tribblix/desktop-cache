@@ -94,8 +94,8 @@
 
 		<documentation>
 			<manpage
-				title='gtk-query-immodules-2.0'
-				section='1M'
+				title='gtk-query-immodules-3.0'
+				section='1'
 				manpath='/usr/share/man' />
 		</documentation>
 	</template>
