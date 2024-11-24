@@ -30,7 +30,7 @@
     of the copyright holder.
 
     Service manifest for ensuring GNOME desktop file cache is up to date.
-    see update-desktop-database manpage for details.
+    See update-desktop-database manpage for details.
 -->
 
 <service_bundle type='manifest' name='SUNWdesktop-cache:desktop-mime-cache'>
